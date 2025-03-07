@@ -163,52 +163,55 @@
 </div>
   <!-- navbar ending -->
 
-    <div class="container1">
-        <div class="form-section">
-            <form>
-                <label for="reason">Reason</label>
-                <select id="reason" name="reason">  
-                    <option value="offering">Offering</option>
-                    <option value="pledge">Pledge</option>
-                </select>
+  <div class="container1">
+    <div class="form-section">
+        <form id="myForm">
+            <label for="reason">Reason</label>
+            <select id="reason" name="reason">  
+                <option value="offering">Offering</option>
+                <option value="pledge">Pledge</option>
+            </select>
 
-                <label for="campus">Your Country</label>
-                <input type="text" id="campus" name="campus" placeholder="Campus">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First Name">
 
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" placeholder="First Name">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name">
 
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Email Address">
 
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Email Address">
+            <label for="telephone">Telephone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="Phone">
 
-                <label for="telephone">Telephone</label>
-                <input type="tel" id="telephone" name="telephone" placeholder="Phone">
+            <label for="currency">Select Currency</label>
+            <select id="currency" name="currency">
+                <option value="usd">US Dollar (USD)</option>
+                <option value="kes">Kenyan Shilling (KES)</option>
+            </select>
 
-                <label for="currency">Select Currency</label>
-                <select id="currency" name="currency">
-                    <option value="usd">US Dollar (USD)</option>
-                    <option value="kes">Kenyan Shilling (KES)</option>
-                </select>
-
-                <label for="amount">Amount</label>
-                <input type="number" id="amount" name="amount" placeholder="Amount">
-            </form>
-            <br>
-            <div class="kenty">
-                <button class="" style="height: 40px; width: 80px; color: blue;" type="submit">Submit</button>
-            </div>
-        </div>
-            
-        <div class="details-section">
-            <img src="/img/Professional Lipa Na Mpesa Banner Flyer (us L - Made with PosterMyWall (1).jpg"  style="height: 300px; width: 400px; margin-bottom: 20px;"   alt="M-Pesa Details">
-            <br>
-            <img src="/img/International day of bank - Made with PosterMyWall.jpg " style="height: 300px; width: 400px; margin-bottom: 200px;"  alt="Bank Details">
-            
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="Amount">
+        </form>
+        <br>
+        <div class="kenty">
+            <button class="" style="height: 40px; width: 80px; color: blue;" type="button" onclick="clearForm()">Submit</button>
         </div>
     </div>
+        
+    <div class="details-section">
+        <img src="/img/Professional Lipa Na Mpesa Banner Flyer (us L - Made with PosterMyWall (1).jpg"  style="height: 300px; width: 400px; margin-bottom: 20px;"   alt="M-Pesa Details">
+        <br>
+        <img src="/img/International day of bank - Made with PosterMyWall.jpg " style="height: 300px; width: 400px; margin-bottom: 200px;"  alt="Bank Details">
+    </div>
+</div>
+
+<script>
+    function clearForm() {
+        document.getElementById("myForm").reset();
+    }
+</script>
+
      <!-- Footer Start -->
      <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -217,8 +220,8 @@
                     <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Quick Links</h4>
                     <a class="btn btn-link" href="about.html">About Us</a>
                     <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="service.html">Service</a>
-                    <a class="btn btn-link" href="testimonial.html">Testimonials</a>
+                    <a class="btn btn-link" href="/Katsangami/services.html">Service</a>
+                    <a class="btn btn-link" href="gallery.html">Gallery</a>
                     <!-- <a class="btn btn-link" href="">Terms & Condition</a> -->
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -248,11 +251,16 @@
                     <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
                     <p>Stay informed! Subscribe to get the latest updates and important announcements.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                        <input id="emailInput" class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2" onclick="clearEmail()">Subscribe</button>
                     </div>
+                    
+                    <script>
+                        function clearEmail() {
+                            document.getElementById("emailInput").value = "";
+                        }
+                    </script>                    
+                    
                 </div>
             </div>
         </div>
